@@ -4,311 +4,395 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrinketSix | Little Things, Big Charms</title>
-  <meta name="description" content="Discover your little happiness with TrinketSix. Cute accessories for your everyday style.">
+  <meta name="description" content="TrinketSix - Cute little things that make you shine. Discover bracelets, rings, press-on nails, charms and more.">
+  <title>TrinketSix | Little Things, Big Happiness</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --pink: #e8a8bd;
+      --pink-dark: #bd718f;
+      --pink-light: #fff2f6;
+      --cream: #fffaf8;
+      --text: #49383f;
+      --muted: #907d84;
+      --white: #ffffff;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root {
-      --pink: #f5b8cf;
-      --soft-pink: #fff0f5;
-      --dark-pink: #c75b83;
-      --cream: #fffaf7;
-      --text: #49363e;
-    }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
       background: var(--cream);
       color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
     }
 
-    nav {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .announcement {
+      background: var(--pink-dark);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    header {
+      background: rgba(255,250,248,.96);
+      padding: 20px 7%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 22px 8%;
-      background: white;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #f5e5eb;
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 27px;
       font-weight: 700;
-      color: var(--dark-pink);
+      letter-spacing: 2px;
+      color: var(--pink-dark);
     }
 
-    nav a {
-      color: var(--text);
-      text-decoration: none;
+    nav {
+      display: flex;
+      gap: 28px;
       font-size: 13px;
-      margin-left: 25px;
+      color: var(--muted);
     }
+
+    nav a:hover { color: var(--pink-dark); }
 
     .hero {
-      text-align: center;
-      padding: 90px 20px;
-      background: var(--soft-pink);
+      padding: 75px 7%;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 45px;
+      background: var(--pink-light);
     }
 
     .eyebrow {
-      color: var(--dark-pink);
-      font-size: 12px;
+      color: var(--pink-dark);
+      font-size: 11px;
       letter-spacing: 3px;
+      text-transform: uppercase;
       font-weight: 700;
     }
 
-    .hero h1 {
+    h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 7vw, 75px);
-      margin: 20px 0;
-      color: #693e52;
+      font-size: clamp(42px, 5.5vw, 70px);
+      line-height: 1.12;
+      margin: 18px 0;
+      font-weight: 600;
     }
 
+    h1 span { color: var(--pink-dark); }
+
     .hero p {
-      color: #856574;
+      max-width: 430px;
+      color: var(--muted);
       font-size: 15px;
-      line-height: 1.8;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 14px 30px;
-      border-radius: 30px;
-      background: var(--dark-pink);
+      background: var(--pink-dark);
       color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: .3s;
+      padding: 13px 25px;
+      border-radius: 3px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: .2s;
     }
 
     .btn:hover {
-      background: #a94169;
-      transform: translateY(-3px);
+      background: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      background: white;
+      padding: 12px;
+      border-radius: 48% 48% 5px 5px;
+      box-shadow: 0 12px 35px #bd718f20;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 48% 48% 3px 3px;
+      display: block;
     }
 
     .section {
-      padding: 75px 8%;
-      text-align: center;
+      padding: 75px 7%;
     }
 
-    .section h2 {
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
       font-family: 'Playfair Display', serif;
       font-size: 38px;
-      margin-bottom: 12px;
+      font-weight: 600;
+      margin: 8px 0;
     }
 
-    .subtitle {
-      color: #927985;
-      font-size: 14px;
-      margin-bottom: 40px;
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      text-align: left;
+      gap: 28px;
     }
 
-    .product {
+    .product-card {
       background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px #e9cbd633;
-      transition: .3s;
+      padding: 12px;
+      border: 1px solid #f4e8ec;
+      transition: .25s;
     }
 
-    .product:hover {
-      transform: translateY(-6px);
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px #bd718f18;
     }
 
-    .product-image {
-      height: 220px;
-      background: var(--soft-pink);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 65px;
+    .product-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      background: var(--pink-light);
     }
 
     .product-info {
-      padding: 20px;
+      padding: 17px 5px 8px;
+      text-align: center;
     }
 
     .product-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 21px;
-      margin-bottom: 7px;
+      font-weight: 600;
     }
 
     .product-info p {
-      color: #987e89;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: var(--dark-pink);
-      font-size: 13px;
-      font-weight: 700;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
     }
 
     .about {
-      background: var(--soft-pink);
+      background: var(--pink-light);
+      text-align: center;
+      padding: 70px 15%;
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 10px 0 18px;
     }
 
     .about p {
-      max-width: 600px;
-      margin: 20px auto;
-      color: #856574;
-      line-height: 1.9;
+      color: var(--muted);
       font-size: 14px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 70px 7%;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     footer {
-      padding: 35px 20px;
-      text-align: center;
-      background: #603d4e;
+      background: #49383f;
       color: white;
-      font-size: 12px;
-      line-height: 2;
-    }
-
-    footer .logo {
-      color: #ffd5e4;
-      margin-bottom: 8px;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 11px;
+      letter-spacing: 1px;
     }
 
     @media (max-width: 700px) {
-      nav { padding: 18px 5%; }
-      nav a { margin-left: 10px; font-size: 11px; }
-      .products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .product-image { height: 150px; font-size: 48px; }
-      .product-info { padding: 14px; }
-      .product-info h3 { font-size: 18px; }
+      header { padding: 16px 5%; }
+      nav { gap: 13px; font-size: 11px; }
+      .logo { font-size: 22px; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+        gap: 30px;
+      }
+      .hero-image img { height: 300px; }
+      .products { grid-template-columns: repeat(2, 1fr); gap: 13px; }
+      .product-card img { height: 190px; }
+      .product-info h3 { font-size: 17px; }
       .section { padding: 55px 5%; }
+      .about { padding: 55px 8%; }
     }
 
     @media (max-width: 380px) {
+      nav { gap: 8px; }
       .products { grid-template-columns: 1fr; }
+      .product-card img { height: 260px; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">TrinketSix ♡</div>
-    <div>
+  <div class="announcement">
+    LITTLE THINGS, BIG HAPPINESS ♡
+  </div>
+
+  <header>
+    <a href="#" class="logo">TrinketSix.</a>
+    <nav>
       <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
+      <a href="#products">Collection</a>
       <a href="#about">About</a>
-    </div>
-  </nav>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero" id="home">
-    <div class="eyebrow">WELCOME TO TRINKETSIX</div>
-    <h1>Little Things,<br>Big Charms.</h1>
-    <p>Find your little happiness through cute accessories.<br>
-    Make every little detail feel special.</p>
-    <a href="#shop" class="btn">Explore Collection ♡</a>
+    <div>
+      <div class="eyebrow">A little something for you</div>
+      <h1>Make Every Day <span>A Little Prettier.</span></h1>
+      <p>
+        Discover your little favorites. From cute accessories
+        to pretty details, find something that feels just like you.
+      </p>
+      <a href="#products" class="btn">EXPLORE COLLECTION</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/bracelets.jpeg" alt="TrinketSix bracelet collection">
+    </div>
   </section>
 
-  <section class="section" id="shop">
-    <div class="eyebrow">OUR COLLECTION</div>
-    <h2>Find Your Favorites</h2>
-    <p class="subtitle">A little something to make your day prettier.</p>
+  <section class="section" id="products">
+    <div class="section-heading">
+      <div class="eyebrow">Find your favorites</div>
+      <h2>Our Collection</h2>
+      <p>Little details that make you feel extra special.</p>
+    </div>
 
     <div class="products">
 
-      <div class="product">
-        <div class="product-image">🎀</div>
+      <div class="product-card">
+        <img src="images/bracelets.jpeg" alt="Bracelets">
         <div class="product-info">
           <h3>Bracelets</h3>
-          <p>Little details for your wrist.</p>
-          <span class="price">Ask for Price ♡</span>
+          <p>Sweet details for your wrist.</p>
         </div>
       </div>
 
-      <div class="product">
-        <div class="product-image">💍</div>
+      <div class="product-card">
+        <img src="images/ring.jpeg" alt="Rings">
         <div class="product-info">
           <h3>Rings</h3>
-          <p>Small sparkle, big personality.</p>
-          <span class="price">Ask for Price ♡</span>
+          <p>Small pieces, pretty moments.</p>
         </div>
       </div>
 
-      <div class="product">
-        <div class="product-image">💅🏻</div>
+      <div class="product-card">
+        <img src="images/presson.jpg" alt="Press-on Nails">
         <div class="product-info">
-          <h3>Press On Nails</h3>
-          <p>Pretty nails for every moment.</p>
-          <span class="price">Ask for Price ♡</span>
+          <h3>Press-on Nails</h3>
+          <p>Pretty nails, effortless style.</p>
         </div>
       </div>
 
-      <div class="product">
-        <div class="product-image">✨</div>
+      <div class="product-card">
+        <img src="images/italianbracelet.jpeg" alt="Italian Bracelet">
         <div class="product-info">
           <h3>Italian Bracelet</h3>
-          <p>Express yourself with every charm.</p>
-          <span class="price">Ask for Price ♡</span>
+          <p>Personalize your everyday look.</p>
         </div>
       </div>
 
-      <div class="product">
-        <div class="product-image">🧸</div>
+      <div class="product-card">
+        <img src="images/charm.jpeg" alt="Charms">
         <div class="product-info">
           <h3>Charms</h3>
-          <p>Make your accessories uniquely yours.</p>
-          <span class="price">Ask for Price ♡</span>
+          <p>Add a little personality.</p>
         </div>
       </div>
 
-      <div class="product">
-        <div class="product-image">🩷</div>
+      <div class="product-card">
+        <img src="images/keychain.jpeg" alt="Keychains">
         <div class="product-info">
           <h3>Keychains</h3>
-          <p>Carry a little cuteness everywhere.</p>
-          <span class="price">Ask for Price ♡</span>
+          <p>Carry something cute everywhere.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <section class="section about" id="about">
-    <div class="eyebrow">A LITTLE ABOUT US</div>
-    <h2>Made for Your Little Moments</h2>
+  <section class="about" id="about">
+    <div class="eyebrow">Get to know us</div>
+    <h2>A Little About TrinketSix</h2>
     <p>
-      TrinketSix is all about celebrating the little things
-      that make you feel special. From cute bracelets to
-      charming accessories, find something that feels
-      uniquely you.
+      TrinketSix is all about the little things that bring happiness.
+      We believe accessories are more than just details.
+      They're a way to express your own style, personality,
+      and the little things that make you, YOU.
     </p>
-    <a href="https://wa.me/6281234567890" class="btn">
-      Contact Us ♡
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">Let's connect</div>
+    <h2>Found Your Favorite?</h2>
+    <p>Have questions or want to know more about our collection?</p>
+    <a href="https://www.instagram.com/" class="btn" target="_blank">
+      VISIT OUR INSTAGRAM
     </a>
   </section>
 
   <footer>
-    <div class="logo">TrinketSix ♡</div>
-    <p>Little Things, Big Charms.</p>
-    <p>© 2026 TrinketSix. All Rights Reserved.</p>
+    © 2026 TRINKETSIX. MADE WITH LOVE ♡
   </footer>
 
 </body>
