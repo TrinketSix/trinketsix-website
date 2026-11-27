@@ -412,6 +412,72 @@
     font-size: 25px;
   }
 }
+    /* CONTACT BUTTONS */
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 23px;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: .25s;
+}
+
+.instagram-btn {
+  background: var(--pink-dark);
+  color: white;
+  border: 1px solid var(--pink-dark);
+}
+
+.whatsapp-btn {
+  background: #f0faf3;
+  color: #278a50;
+  border: 1px solid #b9dfc5;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px #bd718f25;
+}
+
+.instagram-btn:hover {
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.whatsapp-btn:hover {
+  background: #278a50;
+  color: white;
+}
+
+.contact-btn span {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
   </style>
 </head>
 
@@ -521,16 +587,36 @@
     </p>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="eyebrow">Let's connect</div>
-    <h2>Found Your Favorite?</h2>
-    <p>Have questions or want to know more about our collection?</p>
-    <a href="https://www.instagram.com/" class="btn" target="_blank">
-      VISIT OUR INSTAGRAM
-    </a>
-  </section>
+  
+<section class="contact" id="contact">
+  <div class="eyebrow">LET'S CONNECT</div>
+  <h2>We'd Love to Hear From You ♡</h2>
+  <p>
+    Have questions or found your favorite?
+    Let's connect with TrinketSix!
+  </p>
 
-  <footer>
+  <div class="contact-buttons">
+    <a
+      href="https://www.instagram.com/trinketsix/"
+      class="contact-btn instagram-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>♡</span> VISIT OUR INSTAGRAM
+    </a>
+
+    <a
+      href="https://wa.me/6289672214609?text=Hi%20TrinketSix!%20%E2%99%A1%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20products.%20I'd%20love%20to%20know%20more!"
+      class="contact-btn whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>♡</span> CHAT WITH US
+    </a>
+  </div>
+</section>
+
     © 2026 TRINKETSIX. MADE WITH LOVE ♡
   </footer>
 <div class="size-guide-overlay" id="sizeGuide">
