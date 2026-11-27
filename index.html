@@ -478,6 +478,67 @@
     max-width: 280px;
   }
 }
+    /* FAQ SECTION */
+.faq-section {
+  padding: 75px 7%;
+  background: #fffaf8;
+}
+
+.faq-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #f0dfe6;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 5px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  text-align: left;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-question span {
+  color: var(--pink-dark);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 0 35px 0 5px;
+  transition: max-height .3s ease, padding .3s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 55px 6%;
+  }
+
+  .faq-question {
+    font-size: 13px;
+  }
+}
   </style>
 </head>
 
@@ -575,6 +636,59 @@
 
     </div>
   </section>
+
+  
+<section class="faq-section" id="faq">
+  <div class="section-heading">
+    <div class="eyebrow">NEED A LITTLE HELP?</div>
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know before getting your perfect nails ♡</p>
+  </div>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Bagaimana jika ukuran kuku saya berbeda-beda?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Ukur setiap kuku secara terpisah agar mendapatkan ukuran yang paling sesuai.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Bagaimana jika ukuran kuku berada di antara S dan M?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Pilih ukuran yang sedikit lebih besar. Jika diperlukan, kamu bisa merapikan bagian samping kuku agar lebih pas.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Apakah semua jari menggunakan ukuran yang sama?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Tidak. Setiap jari bisa memiliki lebar kuku yang berbeda, jadi pastikan kamu mengukur setiap kuku.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Mengapa ukuran Press-on Nails penting?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Ukuran yang tepat membantu kuku terlihat lebih rapi, nyaman digunakan, dan mengurangi risiko kuku mudah terlepas akibat ukuran yang tidak sesuai.
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <section class="about" id="about">
     <div class="eyebrow">Get to know us</div>
