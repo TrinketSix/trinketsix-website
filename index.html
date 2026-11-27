@@ -208,6 +208,23 @@
       font-size: 12px;
       margin-top: 5px;
     }
+    .size-guide-btn {
+  margin-top: 12px;
+  padding: 9px 16px;
+  background: white;
+  color: var(--pink-dark);
+  border: 1px solid var(--pink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.size-guide-btn:hover {
+  background: var(--pink-dark);
+  color: white;
+}
 
     .about {
       background: var(--pink-light);
@@ -276,6 +293,125 @@
       .products { grid-template-columns: 1fr; }
       .product-card img { height: 260px; }
     }
+    /* PRESS-ON NAILS SIZE GUIDE POPUP */
+
+.size-guide-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(50, 30, 40, 0.55);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.size-guide-popup {
+  background: #fffaf8;
+  width: 100%;
+  max-width: 520px;
+  padding: 35px 28px;
+  position: relative;
+  border: 1px solid #f3dce5;
+  box-shadow: 0 15px 45px #00000020;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.size-guide-popup h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--pink-dark);
+  margin: 12px 0 5px;
+}
+
+.size-description {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.close-popup {
+  position: absolute;
+  top: 12px;
+  right: 17px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  color: var(--pink-dark);
+  cursor: pointer;
+}
+
+.size-table {
+  overflow-x: auto;
+}
+
+.size-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: left;
+}
+
+.size-table th {
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  padding: 12px 8px;
+}
+
+.size-table td {
+  padding: 13px 8px;
+  border-bottom: 1px solid #f2e4e9;
+}
+
+.size-table td:first-child {
+  color: var(--pink-dark);
+  font-weight: 700;
+}
+
+.measurement-tip {
+  background: var(--pink-light);
+  padding: 17px;
+  margin-top: 22px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.measurement-tip strong {
+  color: var(--pink-dark);
+  font-size: 14px;
+}
+
+.measurement-tip p {
+  margin-top: 7px;
+  color: var(--muted);
+}
+
+.close-guide-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: none;
+  background: var(--pink-dark);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.close-guide-btn:hover {
+  background: var(--text);
+}
+
+@media (max-width: 480px) {
+  .size-guide-popup {
+    padding: 30px 18px;
+  }
+
+  .size-guide-popup h2 {
+    font-size: 25px;
+  }
+}
   </style>
 </head>
 
@@ -341,6 +477,9 @@
         <div class="product-info">
           <h3>Press-on Nails</h3>
           <p>Pretty nails, effortless style.</p>
+          <button class="size-guide-btn" onclick="openSizeGuide()">
+  VIEW SIZE GUIDE ♡
+</button>
         </div>
       </div>
 
@@ -394,6 +533,96 @@
   <footer>
     © 2026 TRINKETSIX. MADE WITH LOVE ♡
   </footer>
+<div class="size-guide-overlay" id="sizeGuide">
 
+  <div class="size-guide-popup">
+
+    <button class="close-popup" onclick="closeSizeGuide()">
+      &times;
+    </button>
+
+    <div class="eyebrow">TRINKETSIX SIZE GUIDE</div>
+
+    <h2>Find Your Perfect Fit ♡</h2>
+
+    <p class="size-description">
+      Choose the perfect size for your natural nails.
+    </p>
+
+    <div class="size-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Lebar Kuku</th>
+            <th>Cocok Untuk</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>XS</td>
+            <td>10–11 mm</td>
+            <td>Kuku kecil, kelingking</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>12–13 mm</td>
+            <td>Kuku ramping</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>14–15 mm</td>
+            <td>Paling umum</td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>16–17 mm</td>
+            <td>Kuku lebar, ibu jari</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="measurement-tip">
+      <strong>♡ How to measure</strong>
+      <p>
+        Ukur lebar kuku natural kamu dari sisi kiri ke kanan
+        pada bagian kuku yang paling lebar.
+      </p>
+      <p>
+        Makin lebar kuku, makin besar ukurannya.
+      </p>
+    </div>
+
+    <button class="close-guide-btn" onclick="closeSizeGuide()">
+      GOT IT ♡
+    </button>
+
+  </div>
+</div>
+  <script>
+  function openSizeGuide() {
+    document.getElementById("sizeGuide").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSizeGuide() {
+    document.getElementById("sizeGuide").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  document.getElementById("sizeGuide").addEventListener("click", function(event) {
+    if (event.target === this) {
+      closeSizeGuide();
+    }
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      closeSizeGuide();
+    }
+  });
+</script>
 </body>
 </html>
